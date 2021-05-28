@@ -1,0 +1,37 @@
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+        <div class="questions">
+          <button class="hint" id="OpenHintOption">HINT</button>
+  
+            <h1>Wie heeft de volgende quote gezegd?</h1>
+  
+              <div class="questions_with_drop">
+                <p><%=quote%></p>
+                
+              <div class="draggable-elements" id="drop">
+                <div class="draggable" draggable="true" id="<%=answerOne%>"><%=answerOne%></div>
+                <div class="draggable" draggable="true" id="<%= answerTwo %>"><%= answerTwo %></div>
+                <div class="draggable" draggable="true" id="<%= answerThree %>"><%= answerThree %></div>
+                <div class="draggable" draggable="true" id="<%= answerFour %>"><%= answerFour %></div>
+              </div>
+  
+              <div class="droppable" id="drop" ><span>Sleep hier juiste antwoord</span></div>
+        
+              </div>
+  
+          <form method="POST" action="/lord-of-the-rings/level=<%=level%>&question=<%=questionNumber%>">
+            <div>
+              <input type="hidden" name="answer" id="juisteAntwoord" value="">
+            </div>
+            
+              <div class="form_button">
+                <button type='submit' id="send">CONTROL</button>
+              </div>
+          </form>
+        </div>
+      </main>
+    <%- include('partials/pop-ups') %>
+    <%- include('partials/aside') %>

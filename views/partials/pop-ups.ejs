@@ -1,0 +1,90 @@
+
+<!--Pop-up's-->
+<div class="pop_ups"> 
+    <div id="overlay"></div>
+
+    <!--Pop-up voor verlaten van level-->
+    <div class="warning_leave_level_info" id="leaveContainer">
+        <h1>Level Verlaten</h1>
+        <h2>Weet je zeker dat je het level wilt verlaten?<br> Uw score wordt niet opgeslagen.</h2>
+        <div class="warning_leave_level_option">
+            <button class="warning_leave_level_cancel" id="cancelLeave">Nee</button> 
+            <button onclick="window.location.replace('/lord-of-the-rings/choice-of-level');" class="warning_leave_level_leave" id="leavePage">Verlaten</button>
+        </div>
+    </div>
+    
+    <!--Pop-up voor hint vragen-->
+    <div class="hint_option_container" id="HintOptionContainer">
+        <h1>HINT</h1>
+        <div class="hint_option">
+            <button class="hint_option_use_hint" onclick="getHint()" id="openHint">
+              Druk hier voor hint
+              <div>
+              <p>-3</p>
+              <img src="/img/imag_coins.png"/>
+              </div>
+              </button> 
+            <button class="hint_option_cancel_hint" id="closeHintOption">Geen hint</button>
+          </div>  
+    </div>
+
+
+  <!--Pop-up melden dat geen toegankelijk via deze pagina-->
+    <div class="coins_pop_up_container" id="coinsPopUp">
+      <h1>Coins History</h1>
+      <h2>Coins history is enkel toegankelijk via level pagina of info pagina.</h2>               
+      <button class="coins_pop_up_leave" id="closeCoins">Terug naar vraag</button>
+    </div>
+    
+  <!--popup score board -->
+    <div class="popup_score_board" id="popupScoreBoard">
+      <h1 id="levelNumber">Level <%=level%></h1>
+      <p id="scoreText">GOED GESPEELD!</p>
+      <h2 id="scoreNumber"><%=score%>/10</h2>
+      <div class="image_coins_en_punten">
+        <img class="image_coins" src="/img/imag_coins.png" alt="coins">
+        <p id="points">+ <%=score%></p>
+      </div>
+      <button class="menu_button" id="backToMenuPage" onclick="window.location.replace('/lord-of-the-rings/choice-of-level');">MENU</button>
+      <!-- <button class="opnieuw_spelen" id="spelOpnieuwSpelen">OPNIEUW SPELEN</button> -->
+    </div>
+    <div class="overlay_scoreboard" id="overlayScoreboard"></div>
+   
+    <!--popup correct antwoord -->
+    <div class="overlay_answer_feedback" id="overlayAnswerFeedback"></div>
+    <div class="pop_up_correct_antwoord" id="correctAnswer">
+      <h1>UW ANTWOORD IS CORRECT</h1>
+      <img class="correct_foto" src="/img/groen vinkje.png">
+      <button class="volgende_button" id="nextCorrectAnswer" onclick="window.location.href='<%=volgende%>'">VOLGENDE</button>
+    </div>
+    
+    <!--popup niet correct antwoord -->
+    <div class="pop_up_niet_correct_antwoord" id="wronAnswer">
+      <h1>UW ANTWOORD IS NIET CORRECT.<br>
+      CORRECT ANTWOORD IS <br> "<%=correctAnswere%>".</h1>
+      <img class="niet_correct_foto" src="/img/fout symbool.png">
+      <button class="volgende_button" id="nextWronAnswer" onclick="window.location.href='<%=volgende%>'">VOLGENDE</button>
+    </div>
+  </div>
+
+  <script>
+    window.onload = event =>{
+      let actiefScoreboard = "<%= scoreboard %>"
+      if(actiefScoreboard === "false"){
+        let c = "<%= correct %>"
+      if(c === "true"){
+        correctAnswerFunction();
+      }
+      if(c === "false"){
+        wronAnswerFunction();
+      }
+    }
+    if(actiefScoreboard === "true"){
+        scoreboard();
+      }
+    }
+    let getHint = ()=>{
+      window.open('<%=hint%>')
+      window.location.replace(`/lord-of-the-rings?level=<%=level%>&question=<%=questionNumber%>&hint=true`)
+    }
+  </script>

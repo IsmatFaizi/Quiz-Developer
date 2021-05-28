@@ -1,0 +1,45 @@
+<%- include('partials/head') %>
+
+<body class="home">
+    
+    <h1>Welkom bij</h1><img class="home_logo" src="/img/logo.png">
+    <h2>Wat wilt u spelen?</h2>
+    <main>
+        <div  class="game_options">
+            <button class="available_option" onclick="window.location.href='/lord-of-the-rings/choice-of-level';">
+                <img class="lord_of_the_rings_button_img" src="/img/lord_of_the_rings.jpg">
+                <p class="available_option_name">LORD OF THE RINGS</p>
+            </button>
+            <button class="non_available_option" id="nonAvailableOption">
+                <div class="overlay_non_available_option"></div>
+                <img class="fifa_button_img" src="/img/fifa.jpg">
+                <p class="non_available_option_name">FIFA</p>
+            </button>
+            <button class="non_available_option" id="nonAvailableOption">
+                <div class="overlay_non_available_option"></div>
+                <img class="lego_minifigs_ordenen_button_img" src="/img/lego_minifigs_ordenen.png">
+                <p class="non_available_option_name">LEGO MINIGIGS</p>
+            </button>
+            <button class="non_available_option" id="nonAvailableOption">
+                <div class="overlay_non_available_option"></div>
+                <img class="fortnite_button_img" src="/img/fortnite.jpg">
+                <p class="non_available_option_name">FORTNITE</p>
+           </button>
+        
+           <div class="info_icon_and_quit_button">
+             <button onclick="window.location.href='/info-and-privacy';"><img class="info_icon" src="/img/info_button.png"></button>
+               <button class="btn btn-primary quit_button" type="button">QUIT</button>
+            </div>
+        </div>
+        
+   
+    </main>
+    <div id="overlayPopupHome"></div>
+    <div class="pop_up_home" id="popupHome">
+        <h1>Comming soon</h1>
+        <h2>Het gekozen spel is binnenkort beschikbaar</h2>               
+        <button class="pop_up_home_leave" id="popupHomeLeave">Terug naar home</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="questions">
+          <button class="hint" id="OpenHintOption">HINT</button>
+          <form method="POST" action="/lord-of-the-rings/level=<%=level%>&question=<%=questionNumber%>">
+            <h1 class="vraag_dropdown">Wie heeft de volgende quote gezegd?</h1>
+            <p class="paragraaf_dropdown_keuzevraag"><%=quote%></p>
+            <fieldset class="meerkeuzevraag">
+                <div class="keuzevraag" >
+                  <input class="paardnaam" type="radio" name="answer" value="<%= answerOne %>" id="anwser1"> 
+                  <label class="checkbox1" for="anwser1"><%=answerOne%></label><br>
+                </div>
+                <div class="keuzevraag">
+                  <input class="paardnaam" type="radio" name="answer" value="<%= answerTwo %>" id="anwser2" >
+                  <label class="checkbox1" for="anwser2"> <%= answerTwo %></label><br>
+                </div>
+                <div class="keuzevraag">
+                  <input class="paardnaam" type="radio" name="answer" value="<%= answerThree %>" id="anwser3">
+                  <label class="checkbox1" for="anwser3"> <%= answerThree %></label><br>
+                </div>
+                <div class="keuzevraag">
+                  <input class="paardnaam" type="radio" name="answer" value="<%= answerFour %>" id="anwser4">
+                  <label class="checkbox1" for="anwser4"> <%= answerFour %></label><br>
+                </div>
+                
+            </fieldset>
+            <fieldset class="form_button">
+              <button type='submit' id="send">CONTROL</button>
+          </fieldset>
+          </form>
+        </div>
+        
+      </main>
+      <%- include('partials/pop-ups') %>
+      <%- include('partials/aside') %>

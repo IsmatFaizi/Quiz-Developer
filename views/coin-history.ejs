@@ -1,0 +1,29 @@
+<%- include('partials/head') %>
+<body class="coin_info_page">
+    <%- include('partials/header') %>
+
+    <main>
+        <%
+        if (coinsHistory.length === 0){
+        %>
+        
+            <p class="no_history">Coins History is op dit moment leeg.</p>
+        
+        <%
+        }
+        else if(coinsHistory.length > 0) {
+        coinsHistory.forEach( (t) => {
+        %>
+        <div class="live_feed_coins">
+            <p><%= t.reason%></p>
+            <div>
+                <p><%= t.coins%></p><img src="/img/imag_coins.png">
+            </div>
+        </div>
+        <% 
+            })}; 
+        %>
+    </main>
+
+    <%- include('partials/aside') %>
+

@@ -1,0 +1,1695 @@
+body {
+  min-width: 340px;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+button{
+cursor: pointer;
+background:none ;
+}
+button:focus{
+  outline: none;
+}
+button:hover{
+  transform: scale(0.95);
+}
+
+/*Home pagina alles dat in index zit zonder header*/
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.home h1 {
+  text-align: center;
+  font-size: 43pt;
+  margin: 4rem 0 0.3rem 0;
+  font-weight: bold;
+  text-shadow: 2px 2px #d2d2d2;
+}
+
+.home_logo {
+  width: 310px;
+  margin: 0 auto;
+}
+
+.home h2 {
+  font-size: 28pt;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px #d2d2d2;
+}
+
+.home .game_options {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 1rem;
+  width: 20rem;
+}
+
+.home .available_option {
+  background-color: #7DDA55;
+  margin-bottom: 1.2rem;
+  border-radius: 1rem;
+  border-color: #ffffff;
+  padding: 0.8rem 0;
+}
+.home .available_option:hover {
+  transform: scale(0.95);
+}
+
+.home .available_option_name, .home .non_available_option_name {
+  font-size: 17pt;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+
+.home .overlay_non_available_option{
+  position: absolute;
+  pointer-events: none;
+  margin-top: -0.8rem;
+  width: 20rem;
+  height:3.2rem;
+  border-radius:1rem ;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.home .non_available_option {
+  margin-bottom: 1.2rem;
+  border-radius: 1rem;
+  background: #7DDA55;
+  border-color: #ffffff;
+  padding: 0.8rem 0;
+}
+
+
+
+
+.home .lord_of_the_rings_button_img, .home .fifa_button_img, .home .lego_minifigs_ordenen_button_img, .home .fortnite_button_img {
+  display: none;
+  pointer-events: none;
+}
+
+.home .info_icon_and_quit_button {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.home .info_icon {
+  width: 40px;
+}
+.home .quit_button {
+  font-size: 14pt;
+  width: 6rem;
+  border-radius: 1rem;
+  background-color: #D83131;
+  font-weight: bold;
+  padding: 0.2rem 0;
+  
+}
+/*pop-up voor niet toeganglijk spel*/
+.pop_up_home{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  padding: 0.5rem 0.8rem;
+  width: 19rem;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: 200ms ease-in-out;
+}
+#overlayPopupHome{
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.473);
+}
+.pop_up_home.show_pop_up_home, 
+#overlayPopupHome.show_overlay_pop_up_home{
+  opacity: 1;
+  pointer-events: auto;
+}
+.pop_up_home h1{
+  font-size: 20pt;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0;
+  text-shadow: none;
+}
+.pop_up_home h2{
+  font-size: 13pt;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0;
+  text-shadow: none;
+}
+
+.pop_up_home_leave{
+  display: inline-block;
+  background-color: #7DDA55;
+  border-radius: 2rem ;
+  padding: 0.3rem 1rem;
+  font-size: 17pt;
+  color: white;
+  font-weight: bold;
+  width: 13rem;
+  height: auto;
+  text-align: center;
+  cursor: pointer; 
+  margin: 0.5rem 0;
+}
+
+/*Algemeene header van alle pagina's met vragen daarin*/
+header {
+  grid-area: header;
+}
+
+.header {
+  display: flex;
+  background-color: #7e7e7e;
+  padding: 0.7rem 0.5rem;
+  justify-content: space-between;
+  width: 100%;
+}
+.header .back_pijl {
+  width: 35px;
+  height: 30px;
+  height: 1.5rem;
+  margin: auto 0;  
+}
+
+.header .header_logo {
+  width: 13rem;
+  margin: -0.1rem 0 auto 0;
+  display: flex;
+  align-items: center;
+}
+
+.header .coins {
+  display: flex;
+  background-color: #ffffff;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  justify-content: space-evenly;
+  width: 4rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.header #cijfer_coins {
+  font-size: 14pt;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+.header .coins_image {
+  width: 20px;
+  height: auto;
+  margin: auto 0;
+}
+
+.sub_header {
+  display: flex;
+  background-color: #c4c4c4;
+  padding: 0.3rem 0.5rem;
+  justify-content: space-between;
+}
+
+.sub_header .level_and_questions_number {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.sub_header .level {
+  font-size: 16pt;
+  font-weight: bold;
+  color: black;
+}
+
+.sub_header .question_number {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.sub_header .name_of_the_game {
+  font-size: 16pt;
+  margin: auto 0;
+  color: #0a0a0a;
+  font-weight: bold;
+  text-shadow: 2px 2px #d2d2d2;
+  padding: 0;
+}
+
+/*Algemeene aside van alle pagina's*/
+
+aside {
+  display: none;
+  grid-area: aside;
+  width: 18rem;
+  background-color: #A7A7A7;
+}
+
+.aside_menu_name {
+  font-size: 35pt;
+  margin: 0.5rem 0 1rem 0.1rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px #131212;
+}
+
+.aside_game_options {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 0.5rem;
+  width: 15rem;
+}
+
+.aside_available_option,.aside_non_available_option {
+  background-color: #7DDA55;
+  margin-bottom: 1.2rem;
+  border-radius: 1rem;
+  border-color: #ffffff;
+  padding-bottom: 1px;
+}
+
+.aside_available_option_name, .aside_non_available_option_name {
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+.overlay_aside{
+  position: absolute;
+  pointer-events: none;
+  width: 15rem;
+  height:13.4rem;
+  border-radius:1rem ;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.aside_lord_of_the_rings_button_img, .aside_fifa_button_img, .aside_lego_minifigs_ordenen_button_img, .aside_fortnite_button_img {
+  display: block;
+  width: 240px;
+  border-radius: 1rem;
+}
+
+/*Main van alle pagina's in elke main van pagina komt iets anders*/
+main {
+  grid-area: main;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*Alles van Level paginga waarin gebruiker kan een level kiezen*/
+.p_first_header {
+  font-size: 21pt;
+  margin: auto auto;
+  color: #0a0a0a;
+  font-weight: bold;
+  text-shadow: 2px 2px #d2d2d3;
+  padding: 0;
+}
+
+.level_div {
+  background-color: #7DDA55;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 20rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0.2rem;
+}
+
+.p1_level {
+  color: white;
+  font-weight: bold;
+  font-size: 23pt;
+  margin-left: 1rem;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.p2_level {
+  color: white;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-left: 1rem;
+  font-size: 13pt;
+}
+
+.button_level {
+  color: white;
+  background-color: #fbb400;
+  border-color: #fbb400;
+  font-weight: bold;
+  border-radius: 1rem;
+  font-size: 16pt;
+  margin-right: 0.8rem;
+  padding: 0.5rem 0.5rem;
+}
+
+.single_header {
+  display: flex;
+  background-color: #c4c4c4;
+  padding: 0 0.5rem;
+  justify-content: center;
+  height: 2.9rem;
+  margin-bottom: 3.5rem;
+}
+
+.heading_article {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30pt;
+}
+
+
+/*Informatie pagina over coins en info*/
+.img_first_header {
+  width: 60px;
+  margin: auto;
+}
+
+.info_p {
+  font-size: 14pt;
+}
+
+.info_div {
+  margin: 0.5rem auto 0 auto;
+  width: 300px;
+}
+
+.info_heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24pt;
+}
+.no_history{
+  font-size: 16pt;
+  text-align: center;
+}
+.coin_info_page {
+  background-color: #c4c4c4;
+}
+
+.coin_info_page main .live_feed_coins {
+  display: flex;
+  justify-content: space-between;
+  width:300px;
+  margin: 1rem auto;
+}
+
+.live_feed_coins p {
+  font-size: 16pt;
+}
+
+.live_feed_coins div {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.live_feed_coins div img {
+  width: 20px;
+  height: auto;
+  margin: 0.1rem 0 0.2rem 0.3rem ;
+}
+
+/*Algemeene hint en controler form button*/
+
+.hint{
+  background-color: #7DDA55;
+  border-radius: 2rem ;
+  margin: 0rem 1rem 1rem auto;
+  padding: 0.3rem 1rem;
+  display: inline-block;
+  font-size: 17pt;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form_button{
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.form_button button{
+  background-color: #7DDA55;
+  border-radius: 2rem;
+  text-align: center;
+  border: white;
+  padding: 0.3rem 1rem;
+  font-size: 17pt;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*Drag and drop pagina*/
+
+.questions{
+  max-width:800px ;
+  display: flex;
+  margin: 2rem 0.8rem 0 0.8rem;
+  flex-direction: column;
+}
+
+.questions h1{
+  font-size: 13pt;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.questions p{
+  font-size: 9pt;
+  text-align: center;
+}
+
+.draggable-elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+.draggable {
+  display: block;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0.3rem 0.5rem;
+  font-size: 9pt;
+  cursor: move;
+  transition: opacity 0.2s;
+  text-align: center;
+  margin-top: 0.7rem;
+}
+.draggable:hover {
+  opacity: 0.5;
+}
+.droppable {
+  margin: 1rem auto;
+  padding: 0.3rem 1rem;
+  display: block;
+  text-align: center;
+  background-color: rgb(241, 239, 239);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+  min-height: 2rem;
+}
+.droppable span {
+  display: block;
+  font-size: 15pt;
+  pointer-events: none;
+}
+
+.options_drag_drop{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* Drag and Drop Related Styling */
+
+.droppable.droppable-hover {
+  border-width: 5px;
+  transform: scale(0.99);
+}
+.droppable.dropped {
+  border-style: solid;
+
+}
+.droppable.dropped span {
+  display: none;
+}
+
+.draggable.dragged:hover {
+  transform: scale(0.99);
+}
+
+/*pop-up voor verlaten*/
+
+.warning_leave_level_info{
+  position: fixed;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  padding: 0.5rem 0.8rem;
+  width: 90%;
+  opacity: 0;
+  pointer-events: none;
+  transition: 200ms ease-in-out;
+}
+.warning_leave_level_info.show_leave_warning{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.warning_leave_level_info h1{
+  font-size: 19pt;
+  text-align: center;
+  font-weight: bold;
+}
+.warning_leave_level_info h2{
+  font-size: 11pt;
+  text-align: center;
+  font-weight: bold;
+}
+.warning_leave_level_option{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  margin-top: 0.8rem;
+}
+.warning_leave_level_cancel, .warning_leave_level_leave{
+  background-color: #7DDA55;
+  border-radius: 2rem ;
+  padding: 0.3rem 1rem;
+  display: inline-block;
+  font-size: 17pt;
+  color: white;
+  font-weight: bold;
+  width: 8rem;
+  height: auto;
+  text-align: center;
+  cursor: pointer;
+}
+.warning_leave_level_leave{
+  background-color: #ee0000;
+}
+/*Pop-up voor hint vragen*/
+.hint_option_container {
+  position: fixed;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  border-radius: 1rem;
+  padding: 0.5rem 0.8rem;
+  width: 90%;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hint_option_container.show_hint_opttion {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.show_overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.hint_option{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+.hint_option_container h1{
+  font-size: 19pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.hint_option_use_hint, .hint_option_cancel_hint{
+  display: flex;
+  justify-content: space-between;
+  background-color: #7DDA55;
+  border-radius: 2rem ;
+  padding: 0.3rem 1rem;
+  font-size: 17pt;
+  color: white;
+  font-weight: bold;
+  width: 90%;
+  height: auto;
+  text-align: center;
+  cursor: pointer;
+}
+.hint_option_use_hint div{
+  display: flex;
+}
+.hint_option_use_hint div img {
+  width: 20px;
+  height: auto;
+  margin: auto 0 auto 0.3rem;
+}
+.hint_option_cancel_hint{
+  background-color: #ee0000;
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+  /*Pop-up voor hint met hint in en pop up voor niet toegankelijk coins history pagina*/
+.coins_pop_up_container{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  padding: 0.5rem 0.8rem;
+  width: 90%;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: 200ms ease-in-out;
+}
+.coins_pop_up_container.show_coins_po_up{
+  opacity: 1;
+  pointer-events: auto;
+}
+.coins_pop_up_container h1{
+  font-size: 20pt;
+  text-align: center;
+  font-weight: bold;
+}
+.coins_pop_up_container h2{
+  font-size: 13pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+  .coins_pop_up_leave{
+  display: inline-block;
+  background-color: #7DDA55;
+  border-radius: 2rem ;
+  padding: 0.3rem 1rem;
+  font-size: 17pt;
+  color: white;
+  font-weight: bold;
+  width: 15rem;
+  height: auto;
+  text-align: center;
+  cursor: pointer; 
+  margin: 0.5rem 0;
+}
+
+/* keuze pagina */
+.meerkeuzevraag{
+  margin-top: 0.5rem;
+}
+.keuzevraag{
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0.3rem 0.5rem;
+  transition: opacity 0.2s;
+  margin-top: 15px;
+  align-items: center;
+}
+.keuzevraag label{
+ font-size: 10pt;
+ cursor: pointer;
+ }
+.keuzevraag input[type="radio"] {
+  appearance:none;
+  align-items: center;
+  margin:0 0.8rem 0 0.3rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 15px;
+  background: #eeeeee;
+  box-shadow:
+    inset 0 0 0 .4em white,
+    0 0 0 .3em;
+  transition: .2s;
+  cursor:pointer;
+  color: #363945;
+}
+.keuzevraag input[type="radio"]:hover,
+.keuzevraag input[type="radio"]:checked{
+  box-shadow:
+  inset 0 0 0 .4em white,
+  0 0 0 .3em #7DDA55;
+}
+.keuzevraag input[type="radio"]:focus { outline: 0; }
+
+/* dropdown pagina */
+
+.dropdown{
+  display: flex;
+  justify-content: center;
+}
+.dropdown_effect{
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0.5rem 0.8rem;
+  transition: opacity 0.2s;
+  margin-top: 15px;
+  font-size: 11pt;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8rem;
+}
+.dropdown_effect:focus { outline: 0; }
+
+
+
+/* scoreboard */
+.overlay_scoreboard{
+  position: fixed;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+}
+.popup_score_board{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+}
+.overlay_scoreboard.show_overlay_scoreboard,
+.popup_score_board.show_score_board{
+  pointer-events: auto;
+  opacity: 1;
+}
+
+#levelNumber, #scoreText, #scoreNumber, #points{
+  font-weight: bold;
+  color: white;
+}
+#levelNumber{
+  font-size: 30pt;
+  margin-bottom: 0.3rem;
+}
+#scoreText{
+  font-size: 20pt;
+}
+#scoreNumber{
+  font-size: 40pt;
+  margin: 1rem 0;
+}
+.image_coins_en_punten{
+  display: flex;
+  padding: 0.3rem 0.05rem;
+  justify-content: center;
+  margin-bottom:  1rem ;
+}
+.image_coins{
+  width:38px;
+}
+#points{
+  font-size: 30pt;
+  margin-left: 10px;
+}
+.menu_button, .opnieuw_spelen{
+  text-align: center;
+  margin-top: 1rem;
+  background-color: #7DDA55;
+  border-radius: 2rem;
+  border: white;
+  padding: 0.2rem 0.5rem;
+  font-size: 20pt;
+  color: white;
+  font-weight: bold;
+  width: 17rem;
+}
+
+/* popup correct antwoord */
+.overlay_answer_feedback{
+  position: fixed;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.76);
+  pointer-events: none;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+}
+.pop_up_correct_antwoord{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+}
+
+.overlay_answer_feedback.show_feedback_overlay,
+.pop_up_correct_antwoord.show_pop_up_correct_antwoord{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pop_up_correct_antwoord h1, .pop_up_niet_correct_antwoord h1{
+  background-color: #7DDA55;
+  border-radius: 2rem ;
+  padding: 0.3rem 1rem;
+  font-size: 14pt;
+  width: 21rem;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.correct_foto{
+  width: 150px;
+}
+.volgende_button{
+  text-align: center;
+  margin-top: 3rem;
+  background-color: #7DDA55;
+  border-radius: 2rem;
+  border: white;
+  padding: 0.2rem 0.5rem;
+  color: white;
+  font-weight: bold;
+  width: 12rem;
+  font-size: 20pt;
+}
+/* popup niet correct antwoord */
+
+.pop_up_niet_correct_antwoord{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+}
+.overlay_answer_feedback.show_feedback_overlay,
+.pop_up_niet_correct_antwoord.show_pop_up_niet_correct_antwoord{
+  opacity: 1;
+  pointer-events: auto;
+}
+.pop_up_niet_correct_antwoord h1{
+  background-color: #be0c0c;
+  font-size: 10pt;
+  width: 320px;
+}
+.niet_correct_foto{
+  width: 150px;
+}
+@media screen and (min-width: 425px) {
+  /*Alles van home pagina*/
+  .home h1 {
+    font-size: 52pt;
+  }
+  .home .home_logo {
+    width: 370px;
+  }
+  .home h2 {
+    font-size: 33pt;
+  }
+  .home .game_options {
+    width: 24rem;
+  }
+  .home .overlay_non_available_option{
+    width: 24rem;
+    height:3.4rem;
+  }
+  .home .available_option_name, .home .non_available_option_name, .home .quit_button {
+    font-size: 19pt;
+  }
+  .home .info_icon {
+    width: 50px;
+  }
+  .pop_up_home h1{
+    font-size: 20pt;
+  }
+  .pop_up_home h2{
+    font-size: 13pt;
+  }
+  /*Algemene headers voor alle paginas*/
+  .header .header_logo {
+    width: 260px;
+  }
+  .header .back_pijl {
+    width: 42px;
+  }
+  .header .coins {
+    width: 4.5rem;
+  }
+  .header #cijfer_coins {
+    font-size: 17pt;
+  }
+  .header .coins_image {
+    width: 25px;
+  }
+  .sub_header .name_of_the_game {
+    font-size: 20pt;
+  }
+  .sub_header .level {
+    font-size: 20pt;
+  }
+  .sub_header .question_number {
+    font-size: 15pt;
+  }
+  /*Level pagina*/
+  .p_first_header {
+    font-size: 24pt;
+  }
+  .level_div {
+    width: 24rem;
+  }
+  .button_level {
+    font-size: 18pt;
+  }
+  .p1_level {
+    font-size: 26pt;
+  }
+  .p2_level {
+    font-size: 15pt;
+  }
+  /*Coin en Info pagina*/
+  .coin_info_page main .live_feed_coins {
+    width: 400px;
+  }
+  .live_feed_coins p {
+    font-size: 18pt;
+  }
+  .live_feed_coins div img {
+    width: 24px;
+  }
+  .img_first_header {
+    width: 70px;
+  }
+  .info_div {
+    width: 350px;
+  }
+  .info_p {
+    font-size: 16pt;
+  }
+  .info_heading {
+    font-size: 28pt;
+  }
+  /*Algemeene hint en controler form button*/
+  .hint, .form_button button{
+    font-size: 20pt;
+  }
+
+  /*drag and drop pagina*/
+  .questions h1{
+    font-size: 17pt;
+    text-align: center;
+  }
+  .questions p{
+    font-size: 11pt;
+    text-align: center;
+  }
+  .draggable, .droppable span{
+    font-size: 12pt;
+  }
+
+  /* dropdown pagina */
+  .dropdown_effect{
+    font-size: 13pt;
+  }
+
+  /* popup correct antwoord */
+
+  .pop_up_correct_antwoord h1, .pop_up_niet_correct_antwoord h1{
+    font-size: 16pt;
+    width: 23rem;
+  }
+  .volgende_button{
+    width: 13rem;
+    font-size: 22pt;
+  }
+
+  /* popup niet correct antwoord */
+  .pop_up_niet_correct_antwoord h1{
+    font-size: 13pt;
+    width: 415px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  /*Alles van home pagina new opmaak*/
+  .home h1 {
+    font-size: 60pt;
+  }
+  .home .home_logo {
+    width: 410px;
+  }
+  .home h2 {
+    font-size: 38pt;
+  }
+  .home .game_options {
+    width: 28rem;
+  }
+  .home .overlay_non_available_option{
+    width: 28rem;
+    height:3.6rem;
+  }
+  .home .available_option_name, .home .non_available_option_name, .home .quit_button {
+    font-size: 22pt;
+  }
+  .home .info_icon {
+    width: 55px;
+  }
+  .pop_up_home{
+    width: 25rem;
+  }
+  .pop_up_home h1{
+    font-size: 25pt
+  }
+  .pop_up_home h2{
+    font-size: 16pt;
+  }
+  .pop_up_home_leave{
+    font-size: 20pt;
+    width: 15rem;
+  }
+    /*Algemene headers voor alle paginas*/
+  .header .header_logo {
+    width: 300px;
+  }
+  .header .coins {
+    width: 5rem;
+  }
+  .header .back_pijl {
+    width: 48px;
+    height: 35px;
+  }
+  .header #cijfer_coins {
+    font-size: 19pt;
+  }
+  .header .coins_image {
+    width: 28px;
+  }
+  .sub_header .name_of_the_game {
+    font-size: 24pt;
+  }
+  .sub_header .level {
+    font-size: 24pt;
+  }
+  .sub_header .question_number {
+    font-size: 18pt;
+  }
+  /*Level pagina*/
+  .p_first_header {
+    font-size: 27pt;
+  }
+  .level_div {
+    width: 27rem;
+  }
+  .button_level {
+    font-size: 22pt;
+  }
+  .p1_level {
+    font-size: 29pt;
+  }
+  .p2_level {
+    font-size: 17pt;
+  }
+  /*Coin en Info pagina*/
+  .coin_info_page main .live_feed_coins {
+    width: 450px;
+  }
+  .live_feed_coins p {
+    font-size: 20pt;
+  }
+  .live_feed_coins div img {
+    width: 28px;
+  }
+  .img_first_header {
+    width: 75px;
+  }
+  .info_div {
+    width: 430px;
+  }
+  .info_p {
+    font-size: 18pt;
+  }
+  .info_heading {
+    font-size: 32pt;
+  }
+  
+  /*Algemeene hint en controler form button*/
+  .hint, .form_button button{
+    font-size: 23pt;
+    padding: 0.5rem 1rem;
+  }
+
+  /*drag and drop pagina*/
+  .questions h1{
+    font-size: 20pt;
+  }
+  .questions p{
+    font-size: 14pt;
+  }
+  .draggable, .droppable span{
+    font-size: 15pt;
+  }
+
+
+  /*pop-up voor verlaten*/
+  .warning_leave_level_info h1{
+    font-size: 23pt;
+  }
+  .warning_leave_level_info h2{
+    font-size: 15pt;
+  }
+  .warning_leave_level_cancel, .warning_leave_level_leave{
+    font-size: 19pt;
+    width: 9rem;
+  }
+
+  /*pop-up voor hint vragen*/
+  .hint_option_container h1{
+    font-size: 23pt;
+  }
+  .hint_option_use_hint, .hint_option_cancel_hint{
+    font-size: 19pt;
+    width: 90%;
+  }
+  .hint_option_use_hint div img {
+    width: 25px;
+  }
+  
+  /*Pop-up voor hint met hint in en pop up voor niet toegankelijk coins history pagina*/
+  .coins_pop_up_container h1{
+    font-size: 25pt;
+  }
+  .coins_pop_up_container h2{
+    font-size: 16pt;
+  }
+  .coins_pop_up_leave{
+    font-size: 20pt;
+    width: 18rem;
+  }  
+
+
+  /* keuze pagina */
+  .keuzevraag label{
+    font-size: 15pt;
+  }
+ 
+  .keuzevraag input[type="radio"] {
+    width: 10px;
+    height: 10px;
+    box-shadow:
+      inset 0 0 0 .4em white,
+      0 0 0 .4em;
+  }
+  .keuzevraag input[type="radio"]:hover,
+  .keuzevraag input[type="radio"]:checked{
+    box-shadow:
+    inset 0 0 0 .4em white,
+    0 0 0 .4em #7DDA55;
+  }
+  /* dropdown pagina */
+  .dropdown_effect{
+    font-size: 15pt;
+  }
+
+  /* scoreboard */
+  #levelNumber{
+    font-size: 35pt;
+    }
+  #scoreText{
+    font-size: 25pt;
+  }
+  #scoreNumber{
+    font-size: 45pt;
+  }
+  .image_coins{
+    width:43px;
+  }
+  #points{
+    font-size: 35pt;
+  }
+  .menu_button, .opnieuw_spelen{
+    font-size: 23pt;
+    width: 19rem;
+  }
+
+  /* popup correct antwoord */
+  .pop_up_correct_antwoord h1, .pop_up_niet_correct_antwoord h1{
+    font-size: 20pt;
+    width: 28rem;
+  }
+  .volgende_button{
+    width: 14rem;
+    font-size: 25pt;
+  }
+  /* popup niet correct antwoord */
+  .pop_up_niet_correct_antwoord h1{
+    font-size: 15pt;
+    width: 480px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+    /*Alles van home pagina*/
+  .home h1 {
+    font-size: 73pt;
+  }
+  .home .home_logo {
+    width: 500px;
+  }
+  .home h2 {
+    font-size: 47pt;
+  }
+  .home .game_options {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 34rem;
+  }
+  .home .available_option{
+    padding: 0 0 1px 0;
+  }
+  .home .overlay_non_available_option{
+  margin-top: 0;
+  width: 16.2rem;
+  height: 14.3rem;
+}
+  .home .non_available_option {
+    padding: 0;
+  }
+  .home .available_option_name, .home .non_available_option_name {
+    font-size: 17pt;
+    margin: 0.5rem auto;
+  }
+  .home .lord_of_the_rings_button_img, .home .fifa_button_img, .home .lego_minifigs_ordenen_button_img, .home .fortnite_button_img {
+    display: block;
+    pointer-events: auto;
+    width: 260px;
+    border-radius: 1rem;
+  }
+  .home .info_icon {
+    width: 55px;
+  }
+  .home .quit_button {
+    font-size: 22pt;
+  }
+    /*Algemene headers voor alle paginas*/
+  .header .header_logo {
+    width: 350px;
+  }
+  .header .back_pijl {
+    width: 53px;
+    height: 40px;
+  }
+  .header .coins {
+    width: 5.8rem;
+  }
+  .header #cijfer_coins {
+    font-size: 23pt;
+  }
+  .header .coins_image {
+    width: 30px;
+  }
+  .sub_header .name_of_the_game {
+    font-size: 27pt;
+  }
+  .sub_header .level {
+    font-size: 27pt;
+  }
+  .sub_header .question_number {
+    font-size: 21pt;
+  }
+  /*Level pagina*/
+  .p_first_header {
+    font-size: 30pt;
+  }
+  .level_div {
+    width: 30rem;
+  }
+  .button_level {
+    font-size: 24pt;
+  }
+  .p1_level {
+    font-size: 32pt;
+  }
+  .p2_level {
+    font-size: 20pt;
+  }
+  /*Coin en Info pagina*/
+  .coin_info_page main .live_feed_coins {
+    width: 550px;
+  }
+  .live_feed_coins p {
+    font-size: 22pt;
+  }
+  .live_feed_coins div img {
+    width: 31px;
+  }
+  .img_first_header {
+    width: 85px;
+  }
+  .info_div {
+    margin: 1rem auto 0 auto;
+    width: 500px;
+  }
+  .info_p {
+    font-size: 20pt;
+  }
+  .info_heading {
+    font-size: 36pt;
+  }
+  
+  /*Algemeene hint en controler form button*/
+  .hint, .form_button button{
+    font-size: 25pt;
+  }
+
+  /*drag and drop pagina*/
+  .questions h1{
+    font-size: 24pt;
+  }
+  .questions p{
+    font-size: 16pt;
+  }
+
+  .draggable{
+    font-size: 18pt;
+    padding: 0.3rem 0.8rem;
+  }
+  .droppable span{
+    font-size: 25pt;
+  }
+  /* dropdown pagina */
+  .dropdown_effect{
+    font-size: 16pt;
+  }
+
+  /* popup correct antwoord */
+  .pop_up_correct_antwoord h1, .pop_up_niet_correct_antwoord h1{
+    font-size: 24pt;
+    width: 32rem;
+  }
+  .correct_foto, .niet_correct_foto{
+    width: 200px;
+  }
+  .volgende_button{
+    width: 15rem;
+    font-size: 28pt;
+  }
+
+  /* popup niet correct antwoord */
+  .pop_up_niet_correct_antwoord h1{
+    font-size: 17pt;
+    width: 540px;
+  }
+}
+
+@media screen and (min-width: 690px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+  .sub_header {
+    padding: 0.5rem 1.5rem;
+  }
+  /*Level pagina*/
+  .p_first_header {
+    font-size: 36pt;
+  }
+  .level_div {
+    width: 34rem;
+  }
+  .button_level {
+    font-size: 27pt;
+  }
+  .p1_level {
+    font-size: 34pt;
+  }
+  .p2_level {
+    font-size: 23pt;
+  }
+  .pop_up_home{
+    width: 35rem;
+  }
+  .pop_up_home h1{
+    font-size: 32pt;
+  }
+  .pop_up_home h2{
+    font-size: 20pt;
+  }
+  .pop_up_home_leave{
+    font-size: 25pt;
+    width: 20rem;
+  }
+  /*Coin en Info pagina*/
+  .coin_info_page main .live_feed_coins {
+    width: 600px;
+  }
+  .live_feed_coins p {
+    font-size: 24pt;
+  }
+  .live_feed_coins div img {
+    width: 35px;
+  }
+  .img_first_header {
+    width: 90px;
+  }
+  .info_div {
+    width: 630px;
+  }
+  .info_p {
+    font-size: 22pt;
+  }
+  .info_heading {
+    font-size: 38pt;
+  }
+  
+  /*pop-up voor verlaten*/
+  .warning_leave_level_info{
+    width: 670px;
+  }
+  .warning_leave_level_info h1{
+    font-size: 30pt;
+  }
+  .warning_leave_level_info h2{
+    font-size: 21pt;
+  }
+  .warning_leave_level_cancel, .warning_leave_level_leave{
+    font-size: 25pt;
+    width: 11rem;
+  }
+    
+  /*pop-up voor hint vragen*/
+  .hint_option_container{
+    width: 510px;
+  }
+  .hint_option_container h1{
+    font-size: 30pt;
+  }
+  .hint_option_use_hint, .hint_option_cancel_hint{
+    font-size: 25pt;
+    width: 460px;
+  }
+  .hint_option_use_hint div img {
+    width: 35px;
+  }
+
+  /*Pop-up voor hint met hint in en pop up voor niet toegankelijk coins history pagina*/
+  .coins_pop_up_container{
+    width: 38rem;
+  }
+  .coins_pop_up_container h1{
+    font-size: 32pt;
+  }
+  .coins_pop_up_container h2{
+    font-size: 20pt;
+  }
+  .coins_pop_up_leave{
+    font-size: 25pt;
+    width: 23rem;
+  }
+  .questions p{
+    font-size: 17pt;
+  }
+
+ 
+
+  /* dropdown pagina */
+  .dropdown_effect{
+    font-size: 18pt;
+    margin-bottom: 10rem;
+  }
+
+   /* scoreboard */
+   #levelNumber{
+    font-size: 38pt;
+  }
+  #scoreText{
+    font-size: 28pt;
+  }
+  #scoreNumber{
+    font-size: 48pt;
+  }
+  .image_coins{
+    width:44px;
+  }
+  #points{
+    font-size: 38pt;
+  }
+  .menu_button, .opnieuw_spelen{
+    font-size: 25pt;
+    width: 21rem;
+  }
+
+  /* popup correct antwoord */
+  .correct_foto, .niet_correct_foto{
+    width: 230px;
+  }
+  .volgende_button{
+    width: 17rem;
+    font-size: 32pt;
+  }
+
+  /* popup niet correct antwoord */
+  .pop_up_niet_correct_antwoord h1{
+    font-size: 22pt;
+    width: 640px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  
+  /*Algemeene hint en controler form button*/
+  .hint, .form_button button{
+    font-size: 28pt;
+  }
+
+  /*drag and drop pagina*/
+  .questions h1{
+    font-size: 26pt;
+  }
+  .questions p{
+    font-size: 18pt;
+  }
+
+  .draggable{
+    font-size: 21pt;
+    padding: 0.5rem 2rem;
+  }
+  .droppable span{
+    font-size: 28pt;
+  }
+ /* keuze pagina */
+ .keuzevraag{
+  font-size: 25pt;
+  }
+  .keuzevraag label{
+    font-size: 18pt;
+  }
+  .keuzevraag input[type="radio"] {
+    margin:0 1rem 0 0.5rem;
+    width: 12px;
+    height: 12px;
+    box-shadow:
+      inset 0 0 0 .4em white,
+      0 0 0 .5em;
+  }
+  .keuzevraag input[type="radio"]:hover,
+  .keuzevraag input[type="radio"]:checked{
+    box-shadow:
+    inset 0 0 0 .4em white,
+    0 0 0 .4em #7DDA55;
+  }
+  /* dropdown pagina */
+
+  .dropdown_effect{
+    font-size: 21pt;
+    margin-bottom: 230px;
+}
+}
+
+@media screen and (min-width: 851px) {
+  .questions{
+    margin: 2rem auto 0 auto;
+  }
+
+}
+
+
+@media screen and (min-width: 1280px) {
+  body {
+    position: relative;
+    display: grid;
+    grid-template-areas: ' aside header header ' 
+                        ' aside main main';
+    grid-template-columns: 18rem 1fr;
+    grid-template-rows: 10.5rem 1fr;
+  }
+  aside {
+    display: block;
+  }
+}

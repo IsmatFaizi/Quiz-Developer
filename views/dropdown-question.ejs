@@ -1,0 +1,28 @@
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="questions">
+          <button class="hint" id="OpenHintOption">HINT</button>
+          <form method="POST" action="/lord-of-the-rings/level=<%=level%>&question=<%=questionNumber%>">
+            <h1 class="vraag_dropdown">Wie heeft de volgende quote gezegd?</h1>
+            <p class="paragraaf_dropdown_keuzevraag"><%=quote%></p>
+            <fieldset class="dropdown">
+                <select class="dropdown_effect" name="answer" required>
+                    <option value="" disabled selected hidden>Kies het juiste antwoord...</option>
+                    <option value="<%=answerOne%>"><%=answerOne%></option>
+                    <option value="<%=answerTwo%>"><%=answerTwo%></option>
+                    <option value="<%=answerThree%>"><%=answerThree%></option>
+                    <option value="<%=answerFour%>"><%=answerFour%></option>
+                </select>
+            </fieldset>
+            <fieldset class="form_button">
+              <button type='submit' id="send">CONTROL</button>
+          </fieldset>
+          </form>
+        </div>
+
+      </main>
+      <%- include('partials/pop-ups') %>
+
+    <%- include('partials/aside') %>
