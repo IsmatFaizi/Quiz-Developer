@@ -2,13 +2,13 @@
   "name": "application",
   "version": "1.0.0",
   "description": "Lord Of The Rings Quiz Game",
-  "main": "index.ts",
+  "main": "node.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IsmatFaizi/Quiz-Developer.git"
+    "url": "https://github.com/IsmatFaizi/Quiz-Developer.git"
   },
   "keywords": [
     "Quiz",
