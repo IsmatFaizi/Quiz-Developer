@@ -50,7 +50,7 @@ exports.__esModule = true;
 var express = require('express');
 var app = express();
 var ejs = require('ejs');
-var data = require('./data');
+var data = require('./data.js');
 app.set('port', (process.env.PORT || 5000));
 app.set('view engine', 'ejs');
 app.use(express.json({ limit: '1mb' }));
