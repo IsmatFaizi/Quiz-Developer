@@ -142,7 +142,7 @@ var getData = function () { return __awaiter(void 0, void 0, void 0, function ()
         }
     });
 }); };
-//getData();
+getData();
 var movies = undefined;
 var quotes = undefined;
 var characters = undefined;
