@@ -1,6 +1,3 @@
-import { count } from "node:console";
-import { cpuUsage } from "node:process";
-
 const express = require('express');
 const app = express();
 const ejs = require('ejs');
