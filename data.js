@@ -312,5 +312,6 @@ var correctData = function () { return __awaiter(void 0, void 0, void 0, functio
         }
     });
 }); };
-exports.correctData = correctData;
 correctData();
+exports.correctData = correctData;
+
