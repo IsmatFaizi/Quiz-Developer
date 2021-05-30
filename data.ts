@@ -145,5 +145,4 @@ let correctData = async () =>{
   }
   return(allQuestions)
 }
-correctData();
-export{createAnswers,getCorrectQuotes,correctData }; 
+export{correctData }; 
