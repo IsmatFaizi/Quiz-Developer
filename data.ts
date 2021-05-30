@@ -57,7 +57,7 @@ const getData = async () =>{
   await getMovies();
   await getQuotes();
 }
-//getData();
+getData();
 let movies =undefined;
 let quotes =undefined;
 let characters =undefined;
