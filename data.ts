@@ -52,12 +52,19 @@ catch {
   console.log("Bestaande quotes worden gebruikt")
 }
 }
-const getData = async () =>{
+// const getData = async () =>{
+//   await getCharacters();
+//   await getMovies();
+//   await getQuotes();
+// }
+// getData();
+
+(async () =>{
   await getCharacters();
   await getMovies();
   await getQuotes();
-}
-getData();
+})();
+
 let movies =undefined;
 let quotes =undefined;
 let characters =undefined;
