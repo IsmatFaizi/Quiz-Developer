@@ -126,7 +126,13 @@ var getQuotes = function () { return __awaiter(void 0, void 0, void 0, function 
         }
     });
 }); };
-var getData = function () { return __awaiter(void 0, void 0, void 0, function () {
+// const getData = async () =>{
+//   await getCharacters();
+//   await getMovies();
+//   await getQuotes();
+// }
+// getData();
+(function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, getCharacters()];
@@ -141,8 +147,7 @@ var getData = function () { return __awaiter(void 0, void 0, void 0, function ()
                 return [2 /*return*/];
         }
     });
-}); };
-getData();
+}); })();
 var movies = undefined;
 var quotes = undefined;
 var characters = undefined;
