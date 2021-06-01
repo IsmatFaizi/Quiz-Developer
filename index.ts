@@ -112,7 +112,8 @@ let allQuestions =undefined;
         if(questionNumber > 10){
             coins += score;
             coinsHistory.push({reason:`Level ${level}`, coins: `+ ${score}`})
-            res.redirect(`/lord-of-the-rings?level=${level}&question=10&scoreboard=true`);  
+            res.redirect(`/lord-of-the-rings?level=${level}&question=10&scoreboard=true`);
+
         }
         else if (selectLevel === 1){
             res.render('drag-and-drop-question',
@@ -145,7 +146,10 @@ app.post(`/lord-of-the-rings/level=:${level}(\[1-5])&question=:${questionNumber}
     let answer = req.body.answer;
     let canswer = correctAnswer;
     if(answer === canswer){
-            score +=1;
+        if(questionNumber === 1){
+            score =0;
+        }   
+        score +=1;
         res.redirect(`/lord-of-the-rings?level=${level}&question=${questionNumber}&correct=true`);
     }
     else { 

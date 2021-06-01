@@ -164,6 +164,9 @@ app.post("/lord-of-the-rings/level=:" + level + "([1-5])&question=:" + questionN
     var answer = req.body.answer;
     var canswer = correctAnswer;
     if (answer === canswer) {
+        if (questionNumber === 1) {
+            score = 0;
+        }
         score += 1;
         res.redirect("/lord-of-the-rings?level=" + level + "&question=" + questionNumber + "&correct=true");
     }
