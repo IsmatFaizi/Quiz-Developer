@@ -43,7 +43,7 @@ const getQuotes = async ()=>{
    {
         method: 'GET',
         headers: allHeader,
-   })
+   })   
     let jsonVersie = await gegevens.json();
     await fs.writeFile('quotes.json', JSON.stringify(jsonVersie))
     console.log('Al quotes gehaald')
@@ -53,11 +53,10 @@ catch {
 }
 }
 
-
 (async () =>{
-  await getCharacters();
-  await getMovies();
-  await getQuotes();
+  await getCharacters().catch (error => {error.message});
+  await getMovies().catch (error => {error.message});
+  await getQuotes().catch (error => {error.message});
 })();
 
 let movies =undefined;
@@ -65,13 +64,13 @@ let quotes =undefined;
 let characters =undefined;
 
 const readData = async ()=>{
-  movies = JSON.parse(await fs.readFile('./movies.json'));
-  quotes = JSON.parse(await fs.readFile('./quotes.json'));
-  characters = JSON.parse(await fs.readFile('./characters.json'));
+  movies = JSON.parse(await fs.readFile('./movies.json')).catch (error => {error.message});
+  quotes = JSON.parse(await fs.readFile('./quotes.json')).catch (error => {error.message});
+  characters = JSON.parse(await fs.readFile('./characters.json')).catch (error => {error.message});
 }
 
 const getCorrectQuotes = async ()=>{
-  await readData();
+  await readData().catch (error => {error.message});
   let moviesLength =await  movies.docs.length;
   let quotesLength =await  quotes.docs.length;
   let charactersLength =await characters.docs.length;

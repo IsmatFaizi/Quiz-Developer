@@ -126,22 +126,16 @@ var getQuotes = function () { return __awaiter(void 0, void 0, void 0, function 
         }
     });
 }); };
-// const getData = async () =>{
-//   await getCharacters();
-//   await getMovies();
-//   await getQuotes();
-// }
-// getData();
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, getCharacters()];
+            case 0: return [4 /*yield*/, getCharacters()["catch"](function (error) { error.message; })];
             case 1:
                 _a.sent();
-                return [4 /*yield*/, getMovies()];
+                return [4 /*yield*/, getMovies()["catch"](function (error) { error.message; })];
             case 2:
                 _a.sent();
-                return [4 /*yield*/, getQuotes()];
+                return [4 /*yield*/, getQuotes()["catch"](function (error) { error.message; })];
             case 3:
                 _a.sent();
                 return [2 /*return*/];
@@ -159,15 +153,15 @@ var readData = function () { return __awaiter(void 0, void 0, void 0, function (
                 _b = (_a = JSON).parse;
                 return [4 /*yield*/, fs.readFile('./movies.json')];
             case 1:
-                movies = _b.apply(_a, [_g.sent()]);
+                movies = _b.apply(_a, [_g.sent()])["catch"](function (error) { error.message; });
                 _d = (_c = JSON).parse;
                 return [4 /*yield*/, fs.readFile('./quotes.json')];
             case 2:
-                quotes = _d.apply(_c, [_g.sent()]);
+                quotes = _d.apply(_c, [_g.sent()])["catch"](function (error) { error.message; });
                 _f = (_e = JSON).parse;
                 return [4 /*yield*/, fs.readFile('./characters.json')];
             case 3:
-                characters = _f.apply(_e, [_g.sent()]);
+                characters = _f.apply(_e, [_g.sent()])["catch"](function (error) { error.message; });
                 return [2 /*return*/];
         }
     });
@@ -176,7 +170,7 @@ var getCorrectQuotes = function () { return __awaiter(void 0, void 0, void 0, fu
     var moviesLength, quotesLength, charactersLength, random, quote, characterName, movieName, wikiUrl, i, i;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, readData()];
+            case 0: return [4 /*yield*/, readData()["catch"](function (error) { error.message; })];
             case 1:
                 _a.sent();
                 return [4 /*yield*/, movies.docs.length];
