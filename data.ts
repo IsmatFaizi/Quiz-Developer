@@ -54,9 +54,9 @@ catch {
 }
 
 (async () =>{
-  await getCharacters().catch (error => {error.message});
-  await getMovies().catch (error => {error.message});
-  await getQuotes().catch (error => {error.message});
+  await getCharacters();
+  await getMovies();
+  await getQuotes();
 })();
 
 let movies =undefined;
@@ -64,13 +64,13 @@ let quotes =undefined;
 let characters =undefined;
 
 const readData = async ()=>{
-  movies = JSON.parse(await fs.readFile('./movies.json')).catch (error => {error.message});
-  quotes = JSON.parse(await fs.readFile('./quotes.json')).catch (error => {error.message});
-  characters = JSON.parse(await fs.readFile('./characters.json')).catch (error => {error.message});
+  movies = JSON.parse(await fs.readFile('./movies.json'));
+  quotes = JSON.parse(await fs.readFile('./quotes.json'));
+  characters = JSON.parse(await fs.readFile('./characters.json'));
 }
 
 const getCorrectQuotes = async ()=>{
-  await readData().catch (error => {error.message});
+  await readData();
   let moviesLength =await  movies.docs.length;
   let quotesLength =await  quotes.docs.length;
   let charactersLength =await characters.docs.length;
