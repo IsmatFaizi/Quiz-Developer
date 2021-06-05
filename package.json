@@ -1,4 +1,25 @@
 {
+  "name": "application",
+  "version": "1.0.0",
+  "description": "Lord Of The Rings Quiz Game",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IsmatFaizi/Quiz-Developer.git"
+  },
+  "keywords": [
+    "Quiz",
+    "Developer"
+  ],
+  "author": "Nicolas Bruyninckx, Ismat Faizi & Brent Joosens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsmatFaizi/Quiz-Developer/issues"
+  },
+  "homepage": "https://github.com/IsmatFaizi/Quiz-Developer#readme",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
